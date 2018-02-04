@@ -58,17 +58,6 @@ app.get("*", function (req, res) {
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
 
-// app.use('/', function (req, res) {
-//     console.log('hello');
-//     delete req.session.signInInfo;
-//     delete app.locals.signInInfo;
-// });
-// app.get('/deleteSession', (req, res) => {
-//     console.log("清除session");
-//     delete req.session.signInInfo;
-//     delete app.locals.signInInfo;
-//     console.log(req.session.signInInfo);
-// });
 app.listen(3000, () => {
     console.log('server start');
 });

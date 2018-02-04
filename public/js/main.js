@@ -23,6 +23,7 @@ import SignUp from './containers/signup';
 import SignIn from './containers/login';
 import Admin from './containers/admin';
 import  Setting from './containers/setting';
+import myHome from './containers/myHome';
 
 const createMiddlewareStore = applyMiddleware(middleHello,middleEdit,middleDeleteEdit,middleIndex,middleSignUp,middleSignIn,middleAdmin,middleSetting)(createStore);
 
@@ -36,5 +37,6 @@ render(<Provider store={store}>
         <Route path='/signin' component={SignIn}/>
         <Route path='/admin' component={Admin}/>
         <Route path='/setting' component={Setting} />
+        <Route path='/myHome' component={myHome} />
     </Router>
 </Provider>, document.getElementById("content"));
