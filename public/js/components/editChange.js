@@ -11,11 +11,12 @@ function Itemlist(props) {
     </li>
 }
 export default class EditChange extends React.Component {
-    componentDidMount(){
+    componentDidMount() {
         this.props.allList();
     }
+
     render() {
-        const {check,buttonClick,deleteEdit,handelTitleChange,handelContentChange,title,text,list,getInfo,newEdit} = this.props;
+        const {check, buttonClick, deleteEdit, handelTitleChange, handelContentChange, title, text, list, getInfo, newEdit} = this.props;
         return <div>
             <div className="Head">
                 <img src="../../images/photo.jpeg" width={60} height={50}/>
@@ -26,14 +27,15 @@ export default class EditChange extends React.Component {
             </div>
             <div className="articlelist">
                 <p>我的文章</p>
-                <ul>
+                <ul id="userHeaderList">
                     {list.map((val)=>
-                        <Itemlist key={val.ess_id} getInfo={getInfo}  content={val.text} id={val.id} value={val.title}/>
+                        <Itemlist key={val.ess_id} getInfo={getInfo} content={val.text} id={val.ess_id}
+                                  value={val.title}/>
                     )}
                 </ul>
             </div>
             <div className="editArea">
-                <textarea className="editTitle"  title={check} onChange={handelTitleChange} ref="title"/>
+                <textarea className="editTitle" title={check} onChange={handelTitleChange} ref="title"/>
 
                 <textarea className="editText" title={check} onChange={handelContentChange} ref='text'/>
 
