@@ -3,9 +3,6 @@
  */
 import React from 'react';
 export default class myhome extends React.Component {
-    myhome() {
-
-    }
 
     render() {
         return <div>

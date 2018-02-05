@@ -46,5 +46,5 @@ export default class Setting extends React.Component {
 Setting.propTypes = {
     onClickFixInfo: PropTypes.func.isRequired,
     onSavePathClick: PropTypes.func.isRequired,
-   // oldInfo: PropTypes.object.isRequired
+    onChange: PropTypes.func.isRequired
 };

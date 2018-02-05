@@ -26,9 +26,9 @@ export default class EditChange extends React.Component {
             </div>
             <div className="articlelist">
                 <p>我的文章</p>
-                <ul>
+                <ul id="userHeaderList">
                     {list.map((val)=>
-                        <Itemlist key={val.ess_id} getInfo={getInfo}  content={val.text} id={val.id} value={val.title}/>
+                        <Itemlist key={val.ess_id} getInfo={getInfo}  content={val.text} id={val.ess_id} value={val.title}/>
                     )}
                 </ul>
             </div>
