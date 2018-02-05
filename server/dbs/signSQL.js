@@ -13,7 +13,7 @@ const signSQL = {
     deleteStu:'delete from student where stu_id=?',
     deleteUser: 'delete from user where user_id=?',
     userInfo: 'select * from user where user_id=?',
-    stuInfo: 'select * from student where stu_id=?'
+    stuInfo: 'select * from student where user_id=?'
 };
 
 module.exports = signSQL;

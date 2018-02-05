@@ -3,12 +3,20 @@
  */
 import {connect} from 'react-redux';
 import myHome from '../components/myHome';
+import {editList} from '../action';
 
 const mapStateToProps = (state) => {
-    return {}
+    return {
+        check: state.edit.check,
+        list: state.editList.aList
+    }
 };
 
 function mapDispatchToProps(dispatch) {
-    return {}
+    return {
+        myallList: ()=> {
+            dispatch(editList());
+        }
+    }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(myHome);
