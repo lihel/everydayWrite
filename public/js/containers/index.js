@@ -3,8 +3,12 @@
  */
 import Index from "../components/index";
 import {connect} from "react-redux";
-const mapStateToProps = () => {
-    return {}
+
+
+const mapStateToProps = (state) => {
+    return {
+        essayList:state.editList.aList
+    }
 };
 const mapDispatchToProps = (dispatch,ownProps) => ({
     deleteSession: () => {
@@ -19,6 +23,19 @@ const mapDispatchToProps = (dispatch,ownProps) => ({
     onSetting: () => {
         console.log("修改个人信息");
         dispatch({type:'FIX_INFO'});
+    },
+    allEssayList:()=>{
+        dispatch({type:'ALL_ESSAY_LIST'})
+    },
+    onDetials:(e)=>{
+        console.log("文章内容：");
+        e.stopPropagation();
+        const ess_id = e.target.parentNode.id;
+        dispatch({type:'ESS_DETIALS',id:ess_id})
+    },
+    otherHome:(e)=>{
+        console.log("别人的主页：");
+
     }
 });
 const SignUp = connect(mapStateToProps, mapDispatchToProps)(Index);

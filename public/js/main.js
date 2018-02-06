@@ -14,6 +14,7 @@ import middleSignIn from './middlewares/login';
 import middleAdmin from './middlewares/admin';
 import middleSetting from './middlewares/setting';
 import middleMyHome from './middlewares/myHome';
+import middleHeader from './middlewares/header';
 
 
 //hello的demo,可将容器组件再次封装（可使用ownProps属性传递参数），将组件页面引入显示
@@ -28,7 +29,8 @@ import Admin from './containers/admin';
 import  Setting from './containers/setting';
 import myHome from './containers/myHome';
 
-const createMiddlewareStore = applyMiddleware(middleHello, middleEdit, middleDeleteEdit, middleIndex, middleSignUp, middleSignIn, middleAdmin, middleSetting, middleMyHome)(createStore);
+const createMiddlewareStore = applyMiddleware(middleHello, middleEdit, middleDeleteEdit,
+    middleIndex, middleSignUp, middleSignIn, middleAdmin, middleSetting, middleMyHome)(createStore);
 
 const store = createMiddlewareStore(reducer);
 
