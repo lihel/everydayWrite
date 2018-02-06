@@ -42,7 +42,7 @@ router.get('/homeList',(req,res)=>{
                     db.query(userSQL.findById,stu.user_id,(err,resUser)=>{
                         resUser.map((user)=>{
                             stu.name = user.name;
-                            stu.head = user.head_path;
+                            stu.headPath = user.head_path;
                             aaa.push(stu);
                             if (aaa.length === result.length){
                                 // aaa.push(user_id);

@@ -54,13 +54,13 @@ export default class Header extends React.Component {
 }
 
 Header.propTypes = {
-    onSignUp: PropTypes.func.isRequired,
-    onSignIn: PropTypes.func.isRequired,
-    logOut: PropTypes.func.isRequired,
-    setting: PropTypes.func.isRequired,
-    myHome: PropTypes.func.isRequired,
-    userInfo:PropTypes.arrayOf(PropTypes.shape({
-        user_id:PropTypes.number.isRequired,
-        user_name:PropTypes.string.isRequired
-    }).isRequired).isRequired
+    // onSignUp: PropTypes.func.isRequired,
+    // onSignIn: PropTypes.func.isRequired,
+    // logOut: PropTypes.func.isRequired,
+    // setting: PropTypes.func.isRequired,
+    // myHome: PropTypes.func.isRequired,
+    // userInfo:PropTypes.arrayOf(PropTypes.shape({
+    //     user_id:PropTypes.number.isRequired,
+    //     user_name:PropTypes.string.isRequired
+    // }).isRequired).isRequired
 };

@@ -9,7 +9,7 @@ function ItemEssayList(props) {
     //默认头像
     console.log(props);
     console.log("aaa");
-    if (props.head == null) {
+    if (props.headPath == null) {
         return <div id="content">
             <ul id={props.list}>
                 <li onClick={props.otherHome}>{props.name}</li>
@@ -24,7 +24,7 @@ function ItemEssayList(props) {
         return <div id="content">
             <ul id={props.list}>
                 <li onClick={props.otherHome}>{props.name}</li>
-                <li onClick={props.otherHome}><img src={props.head} alt="" width={30} height={30}/></li>
+                <li onClick={props.otherHome}><img src={props.headPath} alt="" width={30} height={30}/></li>
                 <li onClick={props.onDetials}>{props.title}</li>
                 <li onClick={props.onDetials}>{props.text}</li>
                 <li>{props.date}</li>
