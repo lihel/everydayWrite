@@ -1,6 +1,7 @@
 /**
- * Created by lmy on 18-2-6.
+ * Created by zxw on 18-2-03.
  */
+
 import request from 'superagent';
 
 export default store=>next=>action=>{

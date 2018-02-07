@@ -1,6 +1,8 @@
 /**
- * Created by lmy on 18-2-6.
+ * Created by zxw on 18-2-03.
  */
+
+
 const express = require('express');
 const router = express.Router();
 let db = require('../dbs/connection');
@@ -22,13 +24,18 @@ router.get('/userInfo',(req,res)=>{
                 const headPath = result[0].head_path;
                 let user = [];
                 user.push({user_id:id,user_name:name,headPath:headPath});
-                console.log(user);
                 res.json(user);
             }
 
 
-        });
-
+        })
+        // const name = req.session.signInInfo.username;
+        // const headPath = req.session.signInInfo.headPath;
+        // let user = [];
+        // user.push({user_id:id,user_name:name,headPath:headPath});
+        // console.log(id,user.user_id);
+        // console.log(user);
+        // res.json(user);
     }
 
 });

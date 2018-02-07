@@ -14,6 +14,7 @@ import middleSignIn from './middlewares/login';
 import middleAdmin from './middlewares/admin';
 import middleSetting from './middlewares/setting';
 import middleMyHome from './middlewares/myHome';
+import middleHome from './middlewares/home';
 import middleHeader from './middlewares/header';
 
 
@@ -28,9 +29,10 @@ import SignIn from './containers/login';
 import Admin from './containers/admin';
 import  Setting from './containers/setting';
 import myHome from './containers/myHome';
+import Home from './containers/home';
 
 const createMiddlewareStore = applyMiddleware(middleHello, middleEdit, middleDeleteEdit,
-    middleIndex, middleSignUp, middleSignIn, middleAdmin, middleSetting, middleMyHome)(createStore);
+    middleIndex, middleSignUp, middleSignIn, middleAdmin, middleSetting, middleHome)(createStore);
 
 const store = createMiddlewareStore(reducer);
 
@@ -42,6 +44,7 @@ render(<Provider store={store}>
         <Route path='/signin' component={SignIn}/>
         <Route path='/admin' component={Admin}/>
         <Route path='/setting' component={Setting}/>
-        <Route path='/myHome' component={myHome}/>
+        {/*<Route path='/myHome' component={myHome}/>*/}
+        <Route path='/home' components={Home}/>
     </Router>
 </Provider>, document.getElementById("content"));

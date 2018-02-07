@@ -7,7 +7,7 @@ const db = require('../dbs/connection');
 const signSQL = require('../dbs/signSQL');
 
 router.post('/setting', (req,res) => {
-    console.log(req.session.signInInfo);
+   console.log(req.session.signInInfo);
     if(req.session.signInInfo === undefined){
         res.json({data:'false'});
     }else {
@@ -28,7 +28,7 @@ router.post('/setting', (req,res) => {
         };
         db.query(signSQL.stuInfo, id , function (err, result) {
             if(err){
-                console.log(err);
+                console.log("我在这里出错"+err);
             }
             if(result[0].sex === '0'){
                 oldInfo.sex = '女';
@@ -61,33 +61,33 @@ router.post('/fixinfo', (req, res) => {
     }
     db.query(signSQL.findId,name,function (err, result){
         if(err){
-            console.log(err);
+            console.log("这里有错误"+err);
         }else{
             if(result.length === 0 || result[0].user_id === parseInt(id,10)){
                 db.query(signSQL.updateUser,[name,password,headPath,id], function (err, result) {
-                    if(err){
-                        console.log(err);
-                    }
-                    db.query(signSQL.updateStu,[realName,sex,major,git,blog,id], function (err, result) {
-                        if(err){
-                            console.log(err);
-                        }
-                        if(req.session.signInInfo.password !== password){
-                            //若修改密码则清除session重新登录
-                            req.session.signInInfo = {
-                                username: name,
-                                userType: req.session.signInInfo.userType,
-                                password: password,
-                                userId: id,
-                                headPath: req.session.signInInfo.headPath
-                            };
-                            res.json({states:'true'});
-                        }else{
-                            res.json({states:'success'})
-                        }
+                   if(err){
+                       console.log("我在这里"+err);
+                   }
+                   db.query(signSQL.updateStu,[realName,sex,major,git,blog,id], function (err, result) {
+                      if(err){
+                          console.log("在这里"+err);
+                      }
+                      if(req.session.signInInfo.password !== password){
+                          //若修改密码则清除session重新登录
+                          req.session.signInInfo = {
+                              username: name,
+                              userType: req.session.signInInfo.userType,
+                              password: password,
+                              userId: id,
+                              headPath: req.session.signInInfo.headPath
+                          };
+                          res.json({states:'true'});
+                      }else{
+                          res.json({states:'success'})
+                      }
 
-                        console.log("修改信息成功");
-                    });
+                       console.log("修改信息成功");
+                   });
                 });
             } else {
                 console.log('用户名已存在,请重新输入');

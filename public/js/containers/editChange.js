@@ -39,7 +39,7 @@ function mapDispatchToProps(dispatch){
         handelContentChange: (e) => {
             const check = e.target.title;
             const title= document.getElementsByClassName("editTitle")[0].value;
-            dispatch(editTextChange(check,e.target.value,title));
+             dispatch(editTextChange(check,e.target.value,title));
         },//内容改变markdown同步
         getInfo: (e) => {
             const check=e.target.parentNode.id;

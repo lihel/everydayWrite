@@ -1,6 +1,3 @@
-/**
- * Created by lmy on 18-2-6.
- */
 const express = require('express');
 const router = express.Router();
 
@@ -42,7 +39,7 @@ router.get('/homeList',(req,res)=>{
                     db.query(userSQL.findById,stu.user_id,(err,resUser)=>{
                         resUser.map((user)=>{
                             stu.name = user.name;
-                            stu.headPath = user.head_path;
+                            stu.head = user.head_path;
                             aaa.push(stu);
                             if (aaa.length === result.length){
                                 // aaa.push(user_id);

@@ -16,8 +16,9 @@ const signUp = require('./server/routers/signup');
 const signIn = require('./server/routers/login');
 const Admin = require('./server/routers/admin');
 const Setting = require('./server/routers/setting');
-const myHome = require('./server/routers/myHome');
-const index = require('./server/routers/index');
+// const myHome = require('./server/routers/myHome');
+const Home = require('./server/routers/home');
+
 // const header = require('./server/routers/header');
 
 
@@ -57,9 +58,9 @@ app.use('/',signUp);
 app.use('/',signIn);
 app.use('/',Admin);
 app.use('/',Setting);
-app.use('/',myHome);
+// app.use('/',myHome);
+app.use('/',Home);
 // app.use('/',header);
-app.use('/',index);
 
 app.get("*", function (req, res) {
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));

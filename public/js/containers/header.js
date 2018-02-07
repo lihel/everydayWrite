@@ -1,5 +1,5 @@
 /**
- * Created by lmy on 18-2-6.
+ * Created by zxw on 18-2-03
  */
 import {connect} from 'react-redux';
 import Header from '../components/header';
