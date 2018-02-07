@@ -13,7 +13,7 @@ import middleSignUp from './middlewares/signup';
 import middleSignIn from './middlewares/login';
 import middleAdmin from './middlewares/admin';
 import middleSetting from './middlewares/setting';
-import middleMyHome from './middlewares/myHome';
+// import middleMyHome from './middlewares/myHome';
 import middleHome from './middlewares/home';
 import middleHeader from './middlewares/header';
 
@@ -30,21 +30,23 @@ import Admin from './containers/admin';
 import  Setting from './containers/setting';
 import myHome from './containers/myHome';
 import Home from './containers/home';
+import Header from './containers/header';
 
 const createMiddlewareStore = applyMiddleware(middleHello, middleEdit, middleDeleteEdit,
-    middleIndex, middleSignUp, middleSignIn, middleAdmin, middleSetting, middleHome)(createStore);
+    middleIndex, middleSignUp, middleSignIn, middleAdmin, middleSetting, middleHome, middleHeader)(createStore);
 
 const store = createMiddlewareStore(reducer);
 
 render(<Provider store={store}>
     <Router history={browserHistory}>
-        <Route path="/" component={Index}/>
+        {/*<Route path="/" component={Index}/>*/}
         <Route path='/edit' component={Edit}/>
         <Route path='/signup' component={SignUp}/>
         <Route path='/signin' component={SignIn}/>
         <Route path='/admin' component={Admin}/>
         <Route path='/setting' component={Setting}/>
-        {/*<Route path='/myHome' component={myHome}/>*/}
-        <Route path='/home' components={Home}/>
+        <Route path='/myHome' component={myHome}/>
+        <Route path='/' components={Home}/>
+        <Route path='/header' components={Header}/>
     </Router>
 </Provider>, document.getElementById("content"));

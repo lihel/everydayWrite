@@ -18,8 +18,7 @@ const Admin = require('./server/routers/admin');
 const Setting = require('./server/routers/setting');
 // const myHome = require('./server/routers/myHome');
 const Home = require('./server/routers/home');
-
-// const header = require('./server/routers/header');
+const header = require('./server/routers/header');
 
 
 const db_config = {
@@ -60,7 +59,7 @@ app.use('/',Admin);
 app.use('/',Setting);
 // app.use('/',myHome);
 app.use('/',Home);
-// app.use('/',header);
+app.use('/',header);
 
 app.get("*", function (req, res) {
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
