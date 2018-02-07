@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Header from './header';
 
 function ItemEssayList(props) {
     //默认头像
@@ -40,6 +41,7 @@ export default class Home extends React.Component{
     render(){
         const {otherHome,essayList,onDetials} = this.props;
         return <div>
+
             {essayList.map((val)=>
                 <ItemEssayList key={val.ess_id} list={val.ess_id} onDetials={onDetials}otherHome={otherHome} name={val.name} title={val.title} text={val.text} date={val.date} head={val.head}/>
             )}
