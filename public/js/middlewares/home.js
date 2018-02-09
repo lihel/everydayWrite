@@ -11,7 +11,7 @@ export default store=>next=>action=>{
                 if (err){
                     console.log(err);
                 }
-                 alert(res.body);
+                 console.log(res.body);
                 next({type:"ALL_LIST",data:res.body});
 
             })
