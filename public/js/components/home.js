@@ -15,6 +15,7 @@ function ItemEssayList(props) {
                 <li onClick={props.onDetials}>{props.text}</li>
                 <li>{props.date}</li>
             </ul>
+
             <hr/>
         </div>
     } else {

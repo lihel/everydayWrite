@@ -1,3 +1,6 @@
+/**
+ * Created by ubuntu on 18-1-29.
+ */
 import React from 'react';
 import '../../css/sign.css';
 import PropTypes from 'prop-types';

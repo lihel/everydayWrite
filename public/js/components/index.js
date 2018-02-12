@@ -1,3 +1,6 @@
+/**
+ * Created by ubuntu on 18-1-21.
+ */
 import React from 'react';
 import PropTypes from 'prop-types';
 export default class Index extends React.Component {

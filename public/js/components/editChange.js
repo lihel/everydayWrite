@@ -1,6 +1,3 @@
-/**
- * Created by lmy on 17-12-29.
- */
 import React from 'react';
 import '../../css/edit.css';
 import PropTypes from 'prop-types';

@@ -1,3 +1,6 @@
+/**
+ * Created by ubuntu on 18-1-26.
+ */
 import React from 'react';
 import '../../css/admin.css';
 import PropTypes from 'prop-types';
