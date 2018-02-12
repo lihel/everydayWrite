@@ -2,7 +2,6 @@
  * Created by lmy on 18-2-4.
  */
 import React from 'react';
-import '../../css/edit.css';
 import PropTypes from 'prop-types';
 
 function Itemlist(props) {
@@ -22,8 +21,8 @@ export default class EditChange extends React.Component {
                 用户名
             </div>
             <div>
-                <p>我的文章</p>
-                <ul id="userHeaderList">
+                <p>我的主页</p>
+                <ul>
                     {list.map((val)=>
                         <Itemlist key={val.ess_id} getInfo={getInfo}  content={val.text} id={val.ess_id} value={val.title}/>
                     )}
