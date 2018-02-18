@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import Home from '../components/home';
 
 const mapStateToProps = (state)=>{
+    console.log(state.editList.aList);
     return{
         essayList:state.editList.aList,
     };
@@ -19,6 +20,10 @@ const mapDispatchToProps = (dispatch)=>({
         console.log("文章内容：");
         e.stopPropagation();
         const ess_id = e.target.parentNode.id;
+        // alert(ess_id);
+        localStorage.setItem("ess_id",ess_id);
+        let aaa = localStorage.getItem("ess_id");
+        alert(ess_id + aaa);
         dispatch({type:'ESS_DETIALS',id:ess_id})
     },
     otherHome:(e)=>{
@@ -28,3 +33,4 @@ const mapDispatchToProps = (dispatch)=>({
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(Home);
+
