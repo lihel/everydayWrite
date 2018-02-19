@@ -6,7 +6,6 @@ import {connect} from 'react-redux';
 import Home from '../components/home';
 
 const mapStateToProps = (state)=>{
-    console.log(state.editList.aList);
     return{
         essayList:state.editList.aList,
     };
@@ -19,7 +18,6 @@ const mapDispatchToProps = (dispatch)=>({
     onDetials:(e)=>{
         e.stopPropagation();
         const ess_id = e.target.parentNode.id;
-        // alert(ess_id);
         localStorage.setItem("ess_id",ess_id);
         let aaa = localStorage.getItem("ess_id");
         alert(ess_id + aaa);

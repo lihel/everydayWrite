@@ -14,7 +14,7 @@ import middleSignIn from './middlewares/login';
 import middleAdmin from './middlewares/admin';
 import middleSetting from './middlewares/setting';
 import middleEssay from './middlewares/essay';
-// import middleMyHome from './middlewares/myHome';
+import middleMyHome from './middlewares/myHome';
 import middleHome from './middlewares/home';
 import middleHeader from './middlewares/header';
 
@@ -36,7 +36,7 @@ import Essay from './containers/essay';
 
 
 const createMiddlewareStore = applyMiddleware(middleHello, middleEdit, middleDeleteEdit,
-    middleIndex, middleSignUp, middleSignIn, middleAdmin, middleSetting, middleHome, middleHeader, middleEssay)(createStore);
+    middleIndex, middleSignUp, middleSignIn, middleAdmin, middleSetting, middleHome, middleHeader, middleEssay, middleMyHome)(createStore);
 
 const store = createMiddlewareStore(reducer);
 

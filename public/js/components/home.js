@@ -5,15 +5,12 @@ import Header from './header';
 
 function ItemEssayList(props) {
     //默认头像
-    console.log(props);
-    console.log("aaa");
     if (props.head == null) {
         return <div id="content">
             <ul id={props.list}>
                 <li onClick={props.otherHome}>{props.name}</li>
                 <li onClick={props.otherHome}><img src="../../images/photo.jpeg" alt="" width={30} height={30}/></li>
                 <li onClick={props.onDetials}>{props.title}</li>
-                {/*<li onClick={props.onDetials}>{props.text}</li>*/}
                 <li>{props.date}</li>
                 <div>
                     <div>
@@ -32,7 +29,6 @@ function ItemEssayList(props) {
                 <li onClick={props.otherHome}>{props.name}</li>
                 <li onClick={props.otherHome}><img src={props.head} alt="" width={30} height={30}/></li>
                 <li onClick={props.onDetials}>{props.title}</li>
-                {/*<li onClick={props.onDetials}>{props.text}</li>*/}
                 <li>{props.date}</li>
                 <div>
                     <div>
