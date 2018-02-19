@@ -6,7 +6,7 @@ import Essay from '../components/essay';
 import {ess} from "../action/index";
 const mapStateToProps = (state)=>{
     return{
-        essayInfo:state.editList.aList,
+        essayInfo:state.editList.aList
     };
 };
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import marked from 'marked';
 import Header from './header';
 
 function ItemEssayList(props) {
@@ -12,8 +13,15 @@ function ItemEssayList(props) {
                 <li onClick={props.otherHome}>{props.name}</li>
                 <li onClick={props.otherHome}><img src="../../images/photo.jpeg" alt="" width={30} height={30}/></li>
                 <li onClick={props.onDetials}>{props.title}</li>
-                <li onClick={props.onDetials}>{props.text}</li>
+                {/*<li onClick={props.onDetials}>{props.text}</li>*/}
                 <li>{props.date}</li>
+                <div>
+                    <div>
+                        <div className='markdown-rendered-contect'
+                             dangerouslySetInnerHTML={{__html: marked(props.text.toString())}}/>
+                    </div>
+
+                </div>
             </ul>
 
             <hr/>
@@ -24,8 +32,15 @@ function ItemEssayList(props) {
                 <li onClick={props.otherHome}>{props.name}</li>
                 <li onClick={props.otherHome}><img src={props.head} alt="" width={30} height={30}/></li>
                 <li onClick={props.onDetials}>{props.title}</li>
-                <li onClick={props.onDetials}>{props.text}</li>
+                {/*<li onClick={props.onDetials}>{props.text}</li>*/}
                 <li>{props.date}</li>
+                <div>
+                    <div>
+                        <div className='markdown-rendered-contect'
+                             dangerouslySetInnerHTML={{__html: marked(props.text.toString())}}/>
+                    </div>
+
+                </div>
             </ul>
             <hr/>
         </div>

@@ -17,7 +17,6 @@ const mapDispatchToProps = (dispatch)=>({
         dispatch({type:'ALL_ESSAY_LIST'})
     },
     onDetials:(e)=>{
-        console.log("文章内容：");
         e.stopPropagation();
         const ess_id = e.target.parentNode.id;
         // alert(ess_id);
