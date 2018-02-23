@@ -5,6 +5,9 @@ import Header from './header';
 
 function ItemEssayList(props) {
     //默认头像
+    console.log("props");
+    console.log(props);
+
     if (props.head == null) {
         return <div id="content">
             <ul id={props.list}>
@@ -24,7 +27,7 @@ function ItemEssayList(props) {
             <hr/>
         </div>
     } else {
-        return <div id="content">
+        return <div id="haha">
             <ul id={props.list}>
                 <li onClick={props.otherHome}>{props.name}</li>
                 <li onClick={props.otherHome}><img src={props.head} alt="" width={30} height={30}/></li>

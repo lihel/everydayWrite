@@ -12,9 +12,6 @@ function EssayInfo(props) {
             <ul>
                 <li>{props.name}</li>
                 <li><img src="../../images/photo.jpeg" alt="" width={30} height={30}/></li>
-               {/* <li>{props.title}</li>
-                <li>{props.text}</li>
-                <li>{props.date}</li>*/}
                 <div className="show">
                     <div className="showTitle">
                         <div className='markdown-rendered-contect'
@@ -34,9 +31,6 @@ function EssayInfo(props) {
             <ul>
                 <li>{props.name}</li>
                 <li><img src={props.head} alt="" width={30} height={30}/></li>
-               {/* <li>{props.title}</li>
-                <li>{props.text}</li>
-                <li>{props.date}</li>*/}
                 <div className="show">
                     <div className="showTitle">
                         <div className='markdown-rendered-contect'
