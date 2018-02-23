@@ -19,8 +19,8 @@ const mapDispatchToProps = (dispatch)=>({
         e.stopPropagation();
         const ess_id = e.target.parentNode.id;
         localStorage.setItem("ess_id",ess_id);
-        let aaa = localStorage.getItem("ess_id");
-        alert(ess_id + aaa);
+       /* let aaa = localStorage.getItem("ess_id");
+        alert(ess_id + aaa);*/
         dispatch({type:'ESS_DETIALS',id:ess_id})
     },
     otherHome:(e)=>{

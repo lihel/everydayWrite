@@ -1,6 +1,3 @@
-/**
- * Created by ubuntu on 18-1-26.
- */
 import request from 'superagent';
 
 export default store=>next=>action=> {

@@ -1,6 +1,3 @@
-/**
- * Created by ubuntu on 18-1-26.
- */
 import {connect} from 'react-redux';
 import Admin from '../components/admin';
 
@@ -17,10 +14,6 @@ const mapDispatchToProps = (dispatch) => ({
     onDetial: () => {
         console.log('跳转到别人可见的详情页');
         dispatch({type:'USER_DETAIL'})
-    },
-    onClickBackHome: () => {
-        console.log('跳转到个人主页，仅自己可见');
-        dispatch({type:'PERSON_HOME'})
     },
     onDelete: (e) => {
         e.stopPropagation();
