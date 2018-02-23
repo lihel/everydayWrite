@@ -20,11 +20,11 @@ export default class EditChange extends React.Component {
         const {otherlist, myonDetials} = this.props;
         return <div>
             <div>
-                <p>others主页</p>
+                <p>主页</p>
                 <ul>
                     {otherlist.map((val)=>
-                        <OtherItemlist key={val.user_id} myonDetials={myonDetials} content={val.text}
-                                    id={val.user_id} value={val.title}/>
+                        <OtherItemlist key={val.ess_id} myonDetials={myonDetials} content={val.text}
+                                    id={val.ess_id} value={val.title}/>
                     )}
                 </ul>
             </div>

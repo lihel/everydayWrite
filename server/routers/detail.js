@@ -9,12 +9,13 @@ let editSQL = require('../dbs/editSQL');
 router.post('/detailHome', (req, res)=> {
     console.log(req.body.id);
     const user_id = req.body.id;
-    console.log(user_id);
     db.query(editSQL.getMyAllTitle, user_id, (err, result) => {
         if (err) {
             console.log(err);
         }
+        console.log(result);
         res.json(result);
     });
+
 });
 module.exports = router;

@@ -5,6 +5,7 @@ import request from 'superagent';
 
 export default store=>next=>action=> {
     if (action.type === "OTHER_LIST") {
+        console.log("_+_++++++++++++");
         console.log(action);
         request.post('/detailHome')
             .send(action)
@@ -12,8 +13,9 @@ export default store=>next=>action=> {
                 if (err) {
                     console.log(err);
                 }
-                next({type: "ALL_ESSAY", data: res.body});
-            })
+                console.log(res.body);
+                next({type:"ALL_LIST_HEADER", data: res.body});
+            });
     }
     if (action.type === "ESS_DETIALS") {
         window.location.href = '/essay';

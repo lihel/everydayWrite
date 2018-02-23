@@ -14,7 +14,7 @@ export default store=>next=>action=> {
                 next({type:"ALL_STU_LIST", data: res.body});
             })
     }
-    if(action.type === 'OTHER_LIST'){
+    if(action.type === 'OTHER_DETAIL'){
         window.location.href = '/detail';
     }
     if(action.type === 'PERSON_HOME'){

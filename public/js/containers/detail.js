@@ -2,12 +2,12 @@
  * Created by lmy on 18-2-23.
  */
 import {connect} from 'react-redux';
-import EditChange from '../components/myHome';
+import EditChange from '../components/detail';
 
 const mapStateToProps = (state) => {
     return {
         check: state.edit.check,
-        mylist: state.editList.aList
+        otherlist: state.editList.aList
     }
 };
 

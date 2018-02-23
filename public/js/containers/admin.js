@@ -13,9 +13,12 @@ const mapDispatchToProps = (dispatch) => ({
     },
     onDetial: (e) => {
         console.log('跳转到别人可见的详情页');
+        const id = e.target.parentNode.id;
+        console.log(id);
+        e.stopPropagation();
         const user_id = e.target.parentNode.id;
-        console.log(user_id);
-        // dispatch({type:'OTHER_LIST',user_id:user_id});
+        localStorage.setItem("user_id",user_id);
+        dispatch({type:'OTHER_DETAIL',id:id});
     },
     onDelete: (e) => {
         e.stopPropagation();
