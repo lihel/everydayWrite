@@ -5,11 +5,10 @@ import Header from './header';
 
 function ItemEssayList(props) {
     //默认头像
-    console.log("props");
-    console.log(props);
-
+    // console.log("props");
+    // console.log(props);
     if (props.head == null) {
-        return <div id="content">
+        return <div id={props.user_id}>
             <ul id={props.list}>
                 <li onClick={props.otherHome}>{props.name}</li>
                 <li onClick={props.otherHome}><img src="../../images/photo.jpeg" alt="" width={30} height={30}/></li>
@@ -27,7 +26,7 @@ function ItemEssayList(props) {
             <hr/>
         </div>
     } else {
-        return <div id="haha">
+        return <div id={props.user_id}>
             <ul id={props.list}>
                 <li onClick={props.otherHome}>{props.name}</li>
                 <li onClick={props.otherHome}><img src={props.head} alt="" width={30} height={30}/></li>
@@ -59,7 +58,8 @@ export default class Home extends React.Component {
         return <div>
 
             {essayList.map((val)=>
-                <ItemEssayList key={val.ess_id} list={val.ess_id} onDetials={onDetials} otherHome={otherHome}
+                <ItemEssayList key={val.ess_id} list={val.ess_id} user_id={val.user_id} onDetials={onDetials}
+                               otherHome={otherHome}
                                name={val.name} title={val.title} text={val.text} date={val.date} head={val.head}/>
             )}
         </div>
@@ -71,5 +71,6 @@ Home.propTypes = {
         name: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         text: PropTypes.string.isRequired,
+        user_id: PropTypes.number.isRequired,
     }).isRequired).isRequired,
 };

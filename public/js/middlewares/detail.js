@@ -5,7 +5,6 @@ import request from 'superagent';
 
 export default store=>next=>action=> {
     if (action.type === "OTHER_LIST") {
-        console.log("_+_++++++++++++");
         console.log(action);
         request.post('/detailHome')
             .send(action)
