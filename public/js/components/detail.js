@@ -7,9 +7,9 @@ import PropTypes from 'prop-types';
 function OtherItemlist(props) {
     console.log("props");
     console.log(props);
-    return <ul id={props.id}>
-        <li onClick={props.myonDetials}>{props.value}</li>
-    </ul>
+    return <div id={props.id}>
+        <div onClick={props.myonDetials}>{props.value}</div>
+    </div>
 }
 export default class EditChange extends React.Component {
     componentDidMount() {
@@ -21,12 +21,12 @@ export default class EditChange extends React.Component {
         return <div>
             <div>
                 <p>主页</p>
-                <ul>
+                <div>
                     {otherlist.map((val)=>
                         <OtherItemlist key={val.ess_id} myonDetials={myonDetials} content={val.text}
                                     id={val.ess_id} value={val.title}/>
                     )}
-                </ul>
+                </div>
             </div>
         </div>
     }

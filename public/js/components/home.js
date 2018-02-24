@@ -9,11 +9,11 @@ function ItemEssayList(props) {
     // console.log(props);
     if (props.head == null) {
         return <div id={props.user_id}>
-            <ul id={props.list}>
-                <li onClick={props.otherHome}>{props.name}</li>
-                <li onClick={props.otherHome}><img src="../../images/photo.jpeg" alt="" width={30} height={30}/></li>
-                <li onClick={props.onDetials}>{props.title}</li>
-                <li>{props.date}</li>
+            <div id={props.list}>
+                <div onClick={props.otherHome}>{props.name}</div>
+                <div onClick={props.otherHome}><img src="../../images/photo.jpeg" alt="" width={30} height={30}/></div>
+                <div onClick={props.onDetials}>{props.title}</div>
+                <div>{props.date}</div>
                 <div>
                     <div>
                         <div className='markdown-rendered-contect'
@@ -21,17 +21,17 @@ function ItemEssayList(props) {
                     </div>
 
                 </div>
-            </ul>
+            </div>
 
             <hr/>
         </div>
     } else {
         return <div id={props.user_id}>
-            <ul id={props.list}>
-                <li onClick={props.otherHome}>{props.name}</li>
-                <li onClick={props.otherHome}><img src={props.head} alt="" width={30} height={30}/></li>
-                <li onClick={props.onDetials}>{props.title}</li>
-                <li>{props.date}</li>
+            <div id={props.list}>
+                <div onClick={props.otherHome}>{props.name}</div>
+                <div onClick={props.otherHome}><img src={props.head} alt="" width={30} height={30}/></div>
+                <div onClick={props.onDetials}>{props.title}</div>
+                <div>{props.date}</div>
                 <div>
                     <div>
                         <div className='markdown-rendered-contect'
@@ -39,7 +39,7 @@ function ItemEssayList(props) {
                     </div>
 
                 </div>
-            </ul>
+            </div>
             <hr/>
         </div>
     }
@@ -56,7 +56,6 @@ export default class Home extends React.Component {
     render() {
         const {otherHome, essayList, onDetials} = this.props;
         return <div>
-
             {essayList.map((val)=>
                 <ItemEssayList key={val.ess_id} list={val.ess_id} user_id={val.user_id} onDetials={onDetials}
                                otherHome={otherHome}
