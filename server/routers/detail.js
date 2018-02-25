@@ -13,7 +13,6 @@ router.post('/detailHome', (req, res)=> {
         if (err) {
             console.log(err);
         }
-        // console.log(result);
         res.json(result);
     });
 

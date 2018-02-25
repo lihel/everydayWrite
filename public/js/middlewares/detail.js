@@ -5,14 +5,13 @@ import request from 'superagent';
 
 export default store=>next=>action=> {
     if (action.type === "OTHER_LIST") {
-        console.log(action);
+        // console.log(action);
         request.post('/detailHome')
             .send(action)
             .end((err, res)=> {
                 if (err) {
                     console.log(err);
                 }
-                console.log(res.body);
                 next({type:"ALL_LIST_HEADER", data: res.body});
             });
     }

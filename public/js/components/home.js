@@ -11,7 +11,7 @@ function ItemEssayList(props) {
         return <div id={props.user_id}>
             <div id={props.list}>
                 <div onClick={props.otherHome}>{props.name}</div>
-                <div onClick={props.otherHome}><img src="../../images/photo.jpeg" alt="" width={30} height={30}/></div>
+                <img src="../../images/photo.jpeg" onClick={props.otherHome} alt="" width={30} height={30}/>
                 <div onClick={props.onDetials}>{props.title}</div>
                 <div>{props.date}</div>
                 <div>
@@ -22,14 +22,13 @@ function ItemEssayList(props) {
 
                 </div>
             </div>
-
             <hr/>
         </div>
     } else {
         return <div id={props.user_id}>
             <div id={props.list}>
                 <div onClick={props.otherHome}>{props.name}</div>
-                <div onClick={props.otherHome}><img src={props.head} alt="" width={30} height={30}/></div>
+                <img src={props.head} alt="" onClick={props.otherHome} width={30} height={30}/>
                 <div onClick={props.onDetials}>{props.title}</div>
                 <div>{props.date}</div>
                 <div>

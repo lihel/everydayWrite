@@ -12,9 +12,9 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch({type:'ALL_USER_LIST'})
     },
     onDetial: (e) => {
-        console.log('跳转到别人可见的详情页');
+        // console.log('跳转到别人可见的详情页');
         const id = e.target.parentNode.id;
-        console.log(id);
+        // console.log(id);
         e.stopPropagation();
         const user_id = e.target.parentNode.id;
         localStorage.setItem("user_id",user_id);

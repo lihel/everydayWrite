@@ -15,7 +15,7 @@ function mapDispatchToProps(dispatch){
     return{
         otherList: () =>{
             const id = localStorage.getItem("user_id");
-            console.log(id);
+            // console.log(id);
             dispatch({type:"OTHER_LIST",id:id});
         },
         myonDetials:(e)=>{

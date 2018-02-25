@@ -5,8 +5,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function OtherItemlist(props) {
-    console.log("props");
-    console.log(props);
+    // console.log("props");
+    // console.log(props);
     return <div id={props.id}>
         <div onClick={props.myonDetials}>{props.value}</div>
     </div>
