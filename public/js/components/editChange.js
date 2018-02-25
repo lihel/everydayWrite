@@ -3,9 +3,9 @@ import '../../css/edit.css';
 import PropTypes from 'prop-types';
 
 function Itemlist(props) {
-    return <li id={props.id} title={props.content} onClick={props.getInfo}>
+    return <div id={props.id} title={props.content} onClick={props.getInfo}>
         <a href="#">{props.value}</a>
-    </li>
+    </div>
 }
 export default class EditChange extends React.Component {
     componentDidMount(){
