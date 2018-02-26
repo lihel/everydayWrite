@@ -5,8 +5,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import marked from 'marked';
 function EssayInfo(props) {
-    console.log("props");
-    console.log(props);
     if (props.head == null) {
         return <div>
             <ul>

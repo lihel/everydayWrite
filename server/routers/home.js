@@ -4,17 +4,16 @@ const router = express.Router();
 let db = require('../dbs/connection');
 let editSQL = require('../dbs/editSQL');
 let userSQL = require('../dbs/signSQL');
+const moment = require('moment');
 router.get('/homeList',(req,res)=>{
-    // const user_id = req.session.signInInfo.userId;
-    // const user_name = req.session.signInInfo.username;
-    // console.log(user_id);
     db.query(editSQL.getAllEssay,(err,result)=>{
         if(err){
             console.log("我在这里查询失败:"+err);
         }
-        if (result.ess_id<=10){
+        if (result[result.length - 1].ess_id<=10){
             let aaa = [];
             result.map((stu) => {
+                stu.date = moment(stu.date).format('YYYY-MM-DD HH:mm:ss');
                 db.query(userSQL.findById,stu.user_id,(err,resUser)=>{
                     resUser.map((user)=>{
                         stu.name = user.name;
@@ -22,7 +21,6 @@ router.get('/homeList',(req,res)=>{
                         stu.user_id=user.user_id;
                         aaa.push(stu);
                         if (aaa.length === result.length){
-                            // console.log(aaa);
                             res.json(aaa);
                         }
                     });
@@ -35,6 +33,7 @@ router.get('/homeList',(req,res)=>{
                 }
                 let aaa = [];
                 result.map((stu) => {
+                    stu.date = moment(stu.date).format('YYYY-MM-DD HH:mm:ss');
                     db.query(userSQL.findById,stu.user_id,(err,resUser)=>{
                         resUser.map((user)=>{
                             stu.name = user.name;
@@ -42,7 +41,7 @@ router.get('/homeList',(req,res)=>{
                             stu.user_id=user.user_id;
                             aaa.push(stu);
                             if (aaa.length === result.length){
-                                res.json(aaa)
+                                res.json(aaa);
                             }
                         });
                     });
@@ -54,15 +53,15 @@ router.get('/homeList',(req,res)=>{
 
 });
 
-router.post('/essayList',(req,res)=>{
-    const ess_id = req.body.id;
-    db.query(editSQL.essList,ess_id,(err,result)=>{
-        if (err){
-            console.log("查询失败");
-        }else {
-            console.log(result);
-            res.json(result);
-        }
-    })
-});
+// router.post('/essayList',(req,res)=>{
+//     const ess_id = req.body.id;
+//     db.query(editSQL.essList,ess_id,(err,result)=>{
+//         if (err){
+//             console.log("查询失败");
+//         }else {
+//             console.log(result);
+//             res.json(result);
+//         }
+//     })
+// });
 module.exports = router;

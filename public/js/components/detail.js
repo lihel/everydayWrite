@@ -5,8 +5,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function OtherItemlist(props) {
-    // console.log("props");
-    // console.log(props);
     return <div id={props.id}>
         <div onClick={props.myonDetials}>{props.value}</div>
     </div>
@@ -24,7 +22,7 @@ export default class EditChange extends React.Component {
                 <div>
                     {otherlist.map((val)=>
                         <OtherItemlist key={val.ess_id} myonDetials={myonDetials} content={val.text}
-                                    id={val.ess_id} value={val.title}/>
+                                       id={val.ess_id} value={val.title}/>
                     )}
                 </div>
             </div>
