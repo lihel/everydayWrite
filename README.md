@@ -16,4 +16,6 @@ npm run webpack
 另一个终端
 npm start
 
+打开浏览器进入　http://localhost:3000
+
 

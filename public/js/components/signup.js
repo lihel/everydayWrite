@@ -19,7 +19,7 @@ export default class SignUp extends React.Component {
                 <label htmlFor="password">密码：</label>
                 <input type="password" name="password" id="password" />
                 <br />
-                <img id="image" src="../../images/0007020099634317_b.png"/><br/>
+                <img id="image" src="../../images/head.jpg"/><br/>
                 <FileInput type="file" name="myImage" accept=".png,.gif,.jpg" placeholder="点击选择图片" onChange={onSavePathClick}/>
                 <label htmlFor="name">真实姓名：</label>
                 <input type="text" name="realName" id="realName"/>
